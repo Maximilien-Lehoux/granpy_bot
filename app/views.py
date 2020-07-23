@@ -1,9 +1,5 @@
 from flask import Flask, render_template
 
-
-# app.config.from_object('configuration')
-
-
 app = Flask(__name__)
 
 
