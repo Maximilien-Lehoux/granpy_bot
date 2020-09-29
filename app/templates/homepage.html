@@ -1,15 +1,55 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap_css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css"/>
+
     <title>Home</title>
 
 </head>
-<body>
-    <p><img src="static/img/papy.png" alt="Image de papy" class="image_papy"/></p>
-
-    <h1>Bienvenue sur le site de Grandpybot !</h1>
-
-    <p>Paragraphe test</p>
+<body class="container-fluid total_body">
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row">
+                    <p class="col-md-1 image_logo"><img src="static/img/papy.png" alt="Image de papy" class="image_papy"/>
+                    </p>
+                <h1 class="col-md-10">Bienvenue sur le site de Grandpybot !</h1>
+            </div>
+        </div>
+    </header>
+    <section class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <form method="post" action="traitement.py" class="zoned_address col-md-12">
+                    <p>
+                        <label for="address"></label>
+                        <textarea name="address" id="address" class="col-md-6">Salut GrandPy ! Est-ce que tu connais l'adresse de la gare de Périgueux ?</textarea>
+                    </p>
+                </form>
+            </div>
+            <div>
+                <p class="button col-md-12">
+                    <button id="button_send" type="button" class="btn btn-light">Envoyer</button>
+                </p>
+                <p></p>
+            </div>
+            <div class="row">
+                <p class="col-md-6 col-sm-5 dialog_box"></p>
+                <p class="col-md-6 col-sm-5" id="google_map_box"></p>
+            </div>
+        </div>
+    </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC-8eKYcBYOqthRdC9FcikffcNB1HkJvU"></script>
+        <script src="{{ url_for('static', filename='js/api_google.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/api_wikipedia.js') }}"></script>
+    <footer>
+        <p>Maximilien Lehoux</p>
+		<p><a href="https://github.com/Maximilien-Lehoux/granpy_bot">
+            Lien vers github</a></p>
+    </footer>
 </body>
 </html>

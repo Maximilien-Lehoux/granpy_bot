@@ -1,5 +1,61 @@
+.total_body
+{
+    background-color: #31217a;
+}
+
+.image_papy
+{
+    width : 50px;
+    height : auto;
+}
+
+.image_robot {
+    width : 70px;
+    height : auto;
+}
+
 h1
 {
-    text-align: center
-    font-size : 2px;
+    font-size : 40px;
+    height : 100px;
+    color : white;
+    text-align: center;
+}
+
+.zoned_address
+{
+    text-align : center;
+}
+
+textarea
+{
+    height :40px;
+    width : 530px;
+}
+
+.button
+{
+    text-align : center;
+}
+
+.dialog_box
+{
+    height : 450px;
+    border : 1px solid black;
+    color : white;
+    text-justify: auto;
+    overflow : scroll;
+}
+
+.google_map_box
+{
+    height : 450px;
+    border : 1px solid black;
+}
+
+footer
+{
+	margin-top: 30px;
+	border-top: 0.5px solid black;
+	color: white;
 }
