@@ -12,6 +12,16 @@ def homepage():
     return render_template('homepage.html')
 
 
+@app.route('/address_complete', methods=['Get', 'POST'])
+def address_complete_ajax():
+    value = request.form.get('data')
+    address_converted = WorkString(value)
+    address_converted = address_converted.get_address_for_google_map()
+    api_geocode = DataApi(address_converted)
+    address_complete = api_geocode.get_address_complete()
+    return address_complete
+
+
 @app.route('/latitude_ajax', methods=['Get', 'POST'])
 def latitude_ajax():
     value = request.form.get('data')
