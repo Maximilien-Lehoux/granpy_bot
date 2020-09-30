@@ -3,17 +3,21 @@ from string import punctuation
 
 
 class WorkString:
+    """allows to sort the character string entered by the customer"""
     def __init__(self, data):
         self.data = data
 
-    def convert_string(self):
+    def get_address_for_google_map(self):
+        """remove the punctuation and go through the "+" necessary for the
+        google map api"""
         sentence = self.data.strip()
         sentence = sentence.replace(" ", "+")
         sentence = sentence.replace("'", "+")
         sentence = sentence.replace("?", "")
         return sentence
 
-    def remove_stop_words(self):
+    def get_address_selected(self):
+        """get the keywords for the api from wikipedia"""
         address_list_sort = []
         address_list = self.data.split()
         for item in address_list:
@@ -22,5 +26,3 @@ class WorkString:
         address_list_sort = address_list_sort[-3:]
         address_sort = " ".join(address_list_sort)
         return address_sort
-
-
