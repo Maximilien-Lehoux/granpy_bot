@@ -1,5 +1,5 @@
 import urllib.request
-from google_map_api import DataApi
+from app.google_map_api import DataApi
 
 example_latitude = '45.18735239999999'
 example_longitude = '0.7077530999999999'

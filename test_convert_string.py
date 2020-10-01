@@ -1,4 +1,4 @@
-from convert_string import WorkString
+from app.convert_string import WorkString
 
 sentence = "Salut GrandPy ! Est-ce que tu connais l'adresse de la gare de Périgueux ?"
 sentence_without_punctuation = "Salut+GrandPy+!+Est+ce+que+tu+connais+l+adresse+de+la+gare+de+Périgueux"

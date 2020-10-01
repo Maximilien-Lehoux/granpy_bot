@@ -1,6 +1,6 @@
 import urllib.request
 
-from wikipedia_api import DataApiWikipedia
+from app.wikipedia_api import DataApiWikipedia
 
 title_page = 'Gare de Périgueux'
 extract_page = 'La gare de Périgueux est une gare ferroviaire française des ' \

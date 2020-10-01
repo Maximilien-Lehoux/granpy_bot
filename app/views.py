@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 
-from convert_string import WorkString
-from google_map_api import DataApi
-from wikipedia_api import DataApiWikipedia
+from app.convert_string import WorkString
+from app.google_map_api import DataApi
+from app.wikipedia_api import DataApiWikipedia
 
 app = Flask(__name__)
 
