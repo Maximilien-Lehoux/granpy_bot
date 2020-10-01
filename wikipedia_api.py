@@ -52,13 +52,3 @@ class DataApiWikipedia:
         r = requests.get(self.url, params=payload).json()
         return list(r['query']['pages'].values())[0]['fullurl']
 
-
-data_wikipedia = DataApiWikipedia()
-example1 = data_wikipedia.get_title_page_wikipedia('gare périgueux')
-print(example1)
-
-example2 = data_wikipedia.get_page_extract(example1)
-print(example2)
-
-example3 = data_wikipedia.get_url_page_wikipedia(example2)
-print(example3)
