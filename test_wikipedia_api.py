@@ -45,4 +45,3 @@ def test_http_return_url_page(monkeypatch):
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
     example = DataApiWikipedia()
     assert example.get_url_page_wikipedia(extract_page) == results
-    
