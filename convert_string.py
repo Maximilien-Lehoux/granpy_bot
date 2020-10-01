@@ -7,13 +7,16 @@ class WorkString:
     def __init__(self, data):
         self.data = data
 
-    def get_address_for_google_map(self):
+    def get_address_without_punctuation(self):
         """remove the punctuation and go through the "+" necessary for the
         google map api"""
-        sentence = self.data.strip()
+        sentence = self.data
+        sentence = sentence.replace("?", "")
+        sentence = sentence.strip()
+        sentence = sentence.replace("-", " ")
         sentence = sentence.replace(" ", "+")
         sentence = sentence.replace("'", "+")
-        sentence = sentence.replace("?", "")
+
         return sentence
 
     def get_address_selected(self):

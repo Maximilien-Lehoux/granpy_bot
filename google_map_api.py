@@ -1,6 +1,7 @@
 import requests
 from constant import KEY_API_GEOCODE
 
+
 class DataApi:
     """the request to the API which contains the parameters"""
     def __init__(self, address):

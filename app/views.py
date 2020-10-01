@@ -16,7 +16,7 @@ def homepage():
 def address_complete_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
-    address_converted = address_converted.get_address_for_google_map()
+    address_converted = address_converted.get_address_without_punctuation()
     api_geocode = DataApi(address_converted)
     address_complete = api_geocode.get_address_complete()
     return address_complete
@@ -26,7 +26,7 @@ def address_complete_ajax():
 def latitude_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
-    address_converted = address_converted.get_address_for_google_map()
+    address_converted = address_converted.get_address_without_punctuation()
     api_geocode = DataApi(address_converted)
     latitude = api_geocode.get_latitude()
     return latitude
@@ -36,7 +36,7 @@ def latitude_ajax():
 def longitude_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
-    address_converted = address_converted.get_address_for_google_map()
+    address_converted = address_converted.get_address_without_punctuation()
     api_geocode = DataApi(address_converted)
     longitude = api_geocode.get_longitude()
     return longitude
