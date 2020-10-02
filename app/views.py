@@ -12,7 +12,7 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/address_complete', methods=['Get', 'POST'])
+@app.route('/address_complete', methods=['POST'])
 def address_complete_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
@@ -22,7 +22,7 @@ def address_complete_ajax():
     return address_complete
 
 
-@app.route('/latitude_ajax', methods=['Get', 'POST'])
+@app.route('/latitude_ajax', methods=['POST'])
 def latitude_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
@@ -32,7 +32,7 @@ def latitude_ajax():
     return latitude
 
 
-@app.route('/longitude_ajax', methods=['Get', 'POST'])
+@app.route('/longitude_ajax', methods=['POST'])
 def longitude_ajax():
     value = request.form.get('data')
     address_converted = WorkString(value)
@@ -42,7 +42,7 @@ def longitude_ajax():
     return longitude
 
 
-@app.route('/wikipedia_article', methods=['Get', 'POST'])
+@app.route('/wikipedia_article', methods=['POST'])
 def wikipedia_article():
     value = request.form.get('data')
     address_converted = WorkString(value)
@@ -53,7 +53,7 @@ def wikipedia_article():
     return extract_wikipedia
 
 
-@app.route('/wikipedia_url', methods=['Get', 'POST'])
+@app.route('/wikipedia_url', methods=['POST'])
 def wikipedia_url():
     value = request.form.get('data')
     address_converted = WorkString(value)
