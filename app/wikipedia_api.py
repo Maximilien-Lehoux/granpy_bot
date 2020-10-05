@@ -1,3 +1,5 @@
+"""call file at the wikipedia API. we get the title, the extract and the url
+of the page"""
 import requests
 from constant import URL_WIKIPEDIA
 
@@ -36,8 +38,8 @@ class DataApiWikipedia:
             "explaintext": 1,
             "exsectionformat": "plain",
         }
-        r = requests.get(self.url, params=payload).json()
-        return list(r['query']['pages'].values())[0]['extract']
+        response = requests.get(self.url, params=payload).json()
+        return list(response['query']['pages'].values())[0]['extract']
 
     def get_url_page_wikipedia(self, page_title):
         """get the url of the wikipedia article corresponding
@@ -49,6 +51,5 @@ class DataApiWikipedia:
             "prop": "info",
             "inprop": "url",
         }
-        r = requests.get(self.url, params=payload).json()
-        return list(r['query']['pages'].values())[0]['fullurl']
-
+        response = requests.get(self.url, params=payload).json()
+        return list(response['query']['pages'].values())[0]['fullurl']

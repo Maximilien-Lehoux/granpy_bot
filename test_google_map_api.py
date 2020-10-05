@@ -1,15 +1,19 @@
+"""test the class and the methods of the google_map_api file"""
 import urllib.request
 from app.google_map_api import DataApi
 
-example_latitude = '45.18735239999999'
-example_longitude = '0.7077530999999999'
-example_address = 'Gare de Perigueux, 11 Rue Denis Papin, 24000 Périgueux, France'
+EXAMPLE_LATITUDE = '45.18735239999999'
+EXAMPLE_LONGITUDE = '0.7077530999999999'
+EXAMPLE_ADDRESS = 'Gare de Perigueux, 11 Rue Denis Papin, 24000 Périgueux, ' \
+                  'France'
 
 
 def test_http_return_latitude(monkeypatch):
-    results = example_latitude
+    """test obtaining the latitude with the geocode api of google map"""
+    results = EXAMPLE_LATITUDE
 
-    def mockreturn(request):
+    def mockreturn():
+        """use a mock to simulate the api call"""
         return results
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
@@ -18,9 +22,11 @@ def test_http_return_latitude(monkeypatch):
 
 
 def test_http_return_longitude(monkeypatch):
-    results = example_longitude
+    """test obtaining the longitude with the geocode api of google map"""
+    results = EXAMPLE_LONGITUDE
 
-    def mockreturn(request):
+    def mockreturn():
+        """use a mock to simulate the api call"""
         return results
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
@@ -29,9 +35,12 @@ def test_http_return_longitude(monkeypatch):
 
 
 def test_http_return_address_complete(monkeypatch):
-    results = example_address
+    """test obtaining the address complete with the geocode api of google
+    map"""
+    results = EXAMPLE_ADDRESS
 
-    def mockreturn(request):
+    def mockreturn():
+        """use a mock to simulate the api call"""
         return results
 
     monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)

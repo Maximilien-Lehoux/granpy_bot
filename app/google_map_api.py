@@ -1,3 +1,5 @@
+"""call file at the google_map_geocode API. we get the complete's address, the
+latitude and the longitude"""
 import requests
 from constant import KEY_API_GEOCODE
 
@@ -5,7 +7,8 @@ from constant import KEY_API_GEOCODE
 class DataApi:
     """the request to the API which contains the parameters"""
     def __init__(self, address):
-        self.url = "https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}".format(address, KEY_API_GEOCODE)
+        self.url = "https://maps.googleapis.com/maps/api/geocode/json?" \
+                   "address={}&key={}".format(address, KEY_API_GEOCODE)
         self.response = requests.get(self.url)
         self.data_location = \
             self.response.json()["results"][0]

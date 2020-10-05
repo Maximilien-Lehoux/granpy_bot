@@ -1,5 +1,5 @@
+"""get user question, convert and remove stop words"""
 from configuration import general_stop_words
-from string import punctuation
 
 
 class WorkString:
