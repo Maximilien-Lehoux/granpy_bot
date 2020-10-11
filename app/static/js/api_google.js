@@ -23,6 +23,12 @@ $( document ).ready(function()
     butt.on("click", function()
     {
         var value = $("#address").val();
+        if (value == "")
+        {
+            value = "Salut GrandPy ! Est-ce que tu connais l'adresse de la gare de Périgueux ?";
+        }
+        console.log(value);
+
         $.ajax(
         {
             url : '/latitude_ajax',
@@ -31,12 +37,13 @@ $( document ).ready(function()
             // Work with the response
             success: function( response )
             {
-                geocode.latitude = ( response)
+                geocode.latitude = ( response);
                 counter += 1;
                 if (counter >= 2)
                 {
                     initMap();
                 }
+
             }
         });
 
@@ -48,12 +55,13 @@ $( document ).ready(function()
             // Work with the response
             success: function( response )
             {
-                geocode.longitude = ( response)
+                geocode.longitude = ( response);
                 counter += 1;
                 if (counter >= 2)
                 {
                     initMap();
                 }
+
             }
         });
     });

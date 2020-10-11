@@ -19,10 +19,13 @@ class DataApiWikipedia:
             "srsearch": text,
             "srlimit": 1,
         }
-        response = requests.get(self.url, params=payload)
-        data = response.json()
-        title = data['query']['search'][0]['title']
-        return title
+        try:
+            response = requests.get(self.url, params=payload)
+            data = response.json()
+            title = data['query']['search'][0]['title']
+            return title
+        except (IndexError, KeyError):
+            return "OpenClassrooms"
 
     def get_page_extract(self, page_title):
         """get the title of the wikipedia article corresponding to the
@@ -38,6 +41,7 @@ class DataApiWikipedia:
             "explaintext": 1,
             "exsectionformat": "plain",
         }
+
         response = requests.get(self.url, params=payload).json()
         return list(response['query']['pages'].values())[0]['extract']
 

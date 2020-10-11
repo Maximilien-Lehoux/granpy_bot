@@ -26,6 +26,6 @@ class WorkString:
         for item in address_list:
             if item.lower() not in general_stop_words :
                 address_list_sort.append(item)
-        address_list_sort = address_list_sort[-3:]
+        address_list_sort = address_list_sort[-2:]
         address_sort = " ".join(address_list_sort)
         return address_sort

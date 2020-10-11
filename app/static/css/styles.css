@@ -1,25 +1,23 @@
-.total_body
+.image_background
 {
-    background-color: #31217a;
+    border : 1px solid black;
+    background-image : url('image_fond.jpg');
+    height : 500px;
+    font-weight : bold;
 }
 
 .image_papy
 {
-    width : 50px;
-    height : auto;
-}
-
-.image_robot {
-    width : 70px;
+    width : 100px;
     height : auto;
 }
 
 h1
 {
-    font-size : 40px;
+    font-size : 50px;
     height : 100px;
-    color : white;
     text-align: center;
+    color : white;
 }
 
 .zoned_address
@@ -31,6 +29,10 @@ textarea
 {
     height :40px;
     width : 530px;
+    background : url('parquet_clair.jpg');
+    color : black;
+    text-shadow: 2px 2px 2px white;
+    font-weight : bold;
 }
 
 .button
@@ -38,24 +40,63 @@ textarea
     text-align : center;
 }
 
+#button_send
+{
+    background : url('parquet_clair.jpg');
+    text-shadow: 2px 2px 2px white;
+    font-weight : bold;
+}
+
+.area_dialogue_space
+{
+    height : 100px;
+    text-align : center;
+    font-weight : bold;
+}
+
 .dialog_box
 {
     height : 450px;
     border : 1px solid black;
-    color : white;
-    text-justify: auto;
+    text-align: justify;
     overflow : scroll;
+    color : white;
+    background-image : url('parquet_fonce.jpg');
+
 }
 
-.google_map_box
+#google_map_box
 {
     height : 450px;
-    border : 1px solid black;
 }
 
 footer
 {
 	margin-top: 30px;
 	border-top: 0.5px solid black;
-	color: white;
+	text-align : center;
+	color : white;
+
 }
+
+.background_footer
+{
+    background-image : url('parquet_fonce.jpg');
+}
+
+.logo_github, .logo_linkedin
+{
+    width : 50px;
+    height : auto;
+    margin-top : 10px;
+
+}
+
+.name
+{
+    margin-top : auto;
+    margin-bottom : auto;
+    text-align : center;
+}
+
+

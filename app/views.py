@@ -33,6 +33,7 @@ def latitude_ajax():
     address_converted = address_converted.get_address_without_punctuation()
     api_geocode = DataApi(address_converted)
     latitude = api_geocode.get_latitude()
+    print(latitude)
     return latitude
 
 
@@ -44,6 +45,7 @@ def longitude_ajax():
     address_converted = address_converted.get_address_without_punctuation()
     api_geocode = DataApi(address_converted)
     longitude = api_geocode.get_longitude()
+    print(longitude)
     return longitude
 
 
@@ -57,6 +59,8 @@ def wikipedia_article():
     title_wikipedia = item_wikipedia.get_title_page_wikipedia\
         (address_converted)
     extract_wikipedia = item_wikipedia.get_page_extract(title_wikipedia)
+    print(address_converted)
+    print(title_wikipedia)
     return extract_wikipedia
 
 

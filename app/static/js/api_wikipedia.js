@@ -1,8 +1,9 @@
 $( document ).ready(function()
 {
-    counter = 0
+    counter_wiki = 0
     var url_wikipedia = {}
     var address_complete = {}
+    var article_wikipedia = {}
     var butt = $("#button_send");
 
 
@@ -10,6 +11,11 @@ $( document ).ready(function()
     {
 
         var value = $("#address").val();
+        if (value == "")
+        {
+            value = "Salut GrandPy ! Est-ce que tu connais l'adresse de la gare de Périgueux ?";
+        }
+        console.log(value);
 
         $('#button_send').html("Chargement...");
 
@@ -21,11 +27,14 @@ $( document ).ready(function()
                 // Work with the response
                 success: function( response )
                 {
-                    if (counter >= 2)
+                    article_wikipedia.data = (response);
+                    counter_wiki += 1;
+                    if (counter_wiki >= 3)
                     {
-                        $('.dialog_box').append("Bien sur mon garçon : " + address_complete.data + "<br/> et voici une anecdonte : " + '<br/>' +  response + '<br/>' + 'Et voici le lien de la page si tu veux davantage de précision : ' + '<br/>' + url_wikipedia.data + '<br/>'+ '<br/>');
+                        $('.dialog_box').append("Tu m'as demandé : " + value + "<br/>Bien sur mon garçon : " + address_complete.data + "<br/> et voici une anecdonte : " + '<br/>' +  article_wikipedia.data + '<br/>' + 'Et voici le lien de la page si tu veux davantage de précision : ' + '<br/>' + url_wikipedia.data + '<br/>'+ '<br/>');
+                        counter_wiki = 0;
+                        $('#button_send').html("Envoyer");
                     }
-                     $('#button_send').html("Envoyer");
                 }
             });
 
@@ -37,9 +46,16 @@ $( document ).ready(function()
                 // Work with the response
                 success: function( response )
                 {
-                   url_wikipedia.data = response.link(response);
-                   counter += 1;
+                    url_wikipedia.data = (response);
+                    counter_wiki += 1;
+                    if (counter_wiki >= 3)
+                    {
+                        $('.dialog_box').append("Tu m'as demandé : " + value + "<br/>Bien sur mon garçon : " + address_complete.data + "<br/> et voici une anecdonte : " + '<br/>' +  article_wikipedia.data + '<br/>' + 'Et voici le lien de la page si tu veux davantage de précision : ' + '<br/>' + url_wikipedia.data + '<br/>'+ '<br/>');
+                        counter_wiki = 0;
+                        $('#button_send').html("Envoyer");
+                    }
                 }
+
             });
 
             $.ajax(
@@ -50,8 +66,14 @@ $( document ).ready(function()
                 // Work with the response
                 success: function( response )
                 {
-                   address_complete.data = response.link(response);
-                   counter += 1;
+                   address_complete.data = (response);
+                   counter_wiki += 1;
+                   if (counter_wiki >= 3)
+                   {
+                        $('.dialog_box').append("Tu m'as demandé : " + value + "<br/>Bien sur mon garçon : " + address_complete.data + "<br/> et voici une anecdonte : " + '<br/>' +  article_wikipedia.data + '<br/>' + 'Et voici le lien de la page si tu veux davantage de précision : ' + '<br/>' + url_wikipedia.data + '<br/>'+ '<br/>');
+                        counter_wiki = 0;
+                        $('#button_send').html("Envoyer");
+                   }
                 }
             });
     });
