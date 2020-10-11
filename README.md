@@ -1,6 +1,6 @@
 # GranPy Bot, le papy-robot
 
-It's an application written in python via the flask module
+It's an application written in python and javascript via the flask module
 
 ## Getting started
 
@@ -25,7 +25,17 @@ virtualenv -p python3 env
 env\Scripts\activate.bat
 """
 
-to start the server
+To create "constant.py" at the root of the project and and add your api keys :
+
+"""
+KEY_API_GEOCODE = "your api key geocode"
+
+KEY_GOOGLE_MAP = "your api key google map"
+
+URL_WIKIPEDIA = "your api key wikipedia"
+"""
+
+to start the server :
 
 """
 python run.py
